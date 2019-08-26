@@ -31,7 +31,6 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "express-validator": "^6.1.0",
-    "grunt": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.11",
@@ -47,12 +46,14 @@
     "uuid": "^3.3.2",
     "validator": "^11.0.0",
     "grunt-cli": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-sass": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "@babel/register": "^7.4.4"
+    "@babel/register": "^7.4.4",
+    "grunt": "^1.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0"
   }
 }
