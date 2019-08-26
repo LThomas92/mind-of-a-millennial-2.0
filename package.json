@@ -10,6 +10,7 @@
     "client-install": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "postinstall": "grunt sass:production",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Lawrence Thomas",
@@ -30,6 +31,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "express-validator": "^6.1.0",
+    "grunt": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.11",
@@ -43,7 +45,10 @@
     "path": "^0.12.7",
     "query-string": "^6.5.0",
     "uuid": "^3.3.2",
-    "validator": "^11.0.0"
+    "validator": "^11.0.0",
+    "grunt-cli": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
