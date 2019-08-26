@@ -1,0 +1,87 @@
+//FOOTER COMPONENT
+
+.footer {
+  background-color: $color-grey-dark;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  color: inherit;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 2rem;
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 1rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    float: left;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 1rem;
+    }
+    &:hover,
+    &:active {
+      color: $color-primary-blue;
+      transform: scale(1.2);
+    }
+  }
+
+  a {
+    color: $color-black;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  .sm-links {
+    padding: 2rem;
+  }
+
+  &__copyright {
+    color: $color-white;
+    text-align: center;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+}

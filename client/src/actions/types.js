@@ -1,0 +1,8 @@
+export const GET_ERRORS = "GET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_ARTICLE = "GET_ARTICLE";
+export const GET_ARTICLES = "GET_ARTICLES";
+export const ADD_ARTICLE = "ADD_ARTICLE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
+export const ARTICLE_LOADING = "ARTICLE_LOADING";

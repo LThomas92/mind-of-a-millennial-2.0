@@ -1,0 +1,191 @@
+body {
+  font-family: "Lato", "sans-serif";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-black;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+
+    @include respond(iPhone5) {
+      font-size: 0.1rem;
+      letter-spacing: 0.1rem;
+      padding: 0.1rem;
+    }
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+
+    @include respond(galaxyS5) {
+      font-size: 0.2rem;
+      letter-spacing: 0.1rem;
+      padding: 0.5rem;
+    }
+
+    @include respond(tab-port) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+
+    @include respond(tab-land) {
+      letter-spacing: 1rem;
+      font-size: 10rem;
+    }
+
+    @media (min-width: 375px) {
+      font-size: 4rem;
+    }
+    @media (min-width: 320px) {
+      font-size: 3.2rem;
+    }
+    @media (min-width: 360px) {
+      font-size: 4rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(iPhone5) {
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+      padding: 1rem;
+    }
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+
+    @include respond(galaxyS5) {
+      font-size: 0.8rem;
+      padding: 0.3rem;
+    }
+  }
+}
+
+.heading-secondary {
+  color: $color-primary-blue;
+  font-size: 3em;
+  letter-spacing: 0.2rem;
+}
+
+@media (min-width: 700px) {
+  .leading {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.leading {
+  height: 240px;
+  margin-bottom: 30px;
+  padding: 30px;
+  color: $color-white;
+  background: url("https://images.unsplash.com/photo-1483428400520-675ef69a3bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80")
+    center #333 no-repeat;
+  background-size: cover;
+  color: $color-white;
+  text-shadow: 0px 0px 5px #000;
+}
+
+.article-link:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+}
+
+.article-header {
+  padding: 1rem;
+  text-align: center;
+}
+
+.article-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.8);
+
+  &--show {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+}
+
+.img-source {
+  float: left;
+  color: $color-grey-dark;
+}
+
+.username {
+  text-align: right;
+  color: $color-black;
+  font-weight: bold;
+}
+
+.submitted-at {
+  color: $color-grey-dark;
+  text-align: left;
+}
+
+.category {
+  color: $color-black;
+  font-weight: bold;
+  text-align: right;
+}
+
+.article-content {
+  padding: 1.5rem;
+  margin: 2.5rem;
+  clear: left;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon input {
+  padding-left: 4rem;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 9px 8px;
+
+  transition: 0.3s;
+}
+
+.article-line {
+  color: $color-grey-dark;
+  max-width: 100%;
+}

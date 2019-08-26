@@ -1,0 +1,90 @@
+.section-form {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-dark-blue,
+    $color-light-blue
+  );
+
+  @include respond(iPhone5) {
+    padding: 5rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 10rem 0;
+  }
+
+  @include respond(galaxyS5) {
+    padding: 10rem 0;
+  }
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.contact {
+  background-image: $color-grey-dark-2;
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  @include respond(tab-land) {
+    background-image: $color-grey-dark-2;
+    background-size: cover;
+  }
+
+  @include respond(tab-port) {
+    background-image: $color-grey-dark-2;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(iPhone5) {
+      width: 65%;
+    }
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
+
+.login {
+  background-image: $color-grey-dark-2;
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  @include respond(tab-land) {
+    background-image: $color-grey-dark-2;
+    background-size: cover;
+  }
+
+  @include respond(tab-port) {
+    background-image: $color-grey-dark-2;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(iPhone5) {
+      width: 65%;
+    }
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
