@@ -32,11 +32,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(flash());
-app.use(express.static("./public"));
-
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
 
 //PASSPORT CONFIGURATION
 app.use(
@@ -77,10 +72,10 @@ app.use("/api/articles", articles);
 //SERVE STATIC ASSETS IN PRODUCTION
 if (process.env.NODE_ENV === "production") {
   //Set static folder
-  app.use(express.static("./client/build"));
+  app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
