@@ -31,7 +31,6 @@ mongoose.Promise = global.Promise;
 app.use(cors());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
-app.use(cookieParser());
 app.use(flash());
 app.use(express.static("./public"));
 
