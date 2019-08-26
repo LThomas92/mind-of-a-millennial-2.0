@@ -7,7 +7,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "heroku-postbuild": " npm rebuild node-sass NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
