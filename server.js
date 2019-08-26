@@ -12,7 +12,6 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const path = require("path");
 require("./config/passport")(passport);
-const cookieParser = require("cookie-parser");
 
 // ROUTES
 const users = require("./routes/user");
