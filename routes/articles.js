@@ -101,7 +101,6 @@ router.get("/misc", (req, res) => {
     });
 });
 
-
 router.get("/show/:slug", function(req, res, next) {
   Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
     if (err) return next(err);
@@ -110,7 +109,7 @@ router.get("/show/:slug", function(req, res, next) {
 });
 
 router.post(
-  "/add",
+  "/api/articles/add",
   middleware.isWriter,
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
@@ -147,7 +146,7 @@ router.post(
 
 /* DELETE ARTICLE */
 router.delete(
-  "/:id",
+  "/api/articles/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Article.findById(req.params.id)
