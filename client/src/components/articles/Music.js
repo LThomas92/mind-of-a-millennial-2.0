@@ -11,7 +11,7 @@ class Music extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/api/articles/music").then(res => {
+    axios.get("/music").then(res => {
       this.setState({
         articles: res.data
       });

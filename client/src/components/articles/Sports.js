@@ -11,7 +11,7 @@ class SportsArticles extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/api/articles/sports").then(res => {
+    axios.get("/sports").then(res => {
       this.setState({
         articles: res.data
       });

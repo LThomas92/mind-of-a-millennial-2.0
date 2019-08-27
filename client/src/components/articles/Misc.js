@@ -11,7 +11,7 @@ class Misc extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/api/articles/misc").then(res => {
+    axios.get("/misc").then(res => {
       this.setState({
         articles: res.data
       });
