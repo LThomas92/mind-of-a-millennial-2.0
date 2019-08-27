@@ -17,9 +17,11 @@ require("./config/passport")(passport);
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
+const db = require("./config/keys").mongoURI;
+
 //connect to the database
 mongoose
-  .connect(process.env.DB, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
   .catch(err => console.log(err));
 
