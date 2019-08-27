@@ -1,4 +1,5 @@
 module.exports = {
-  mongoURI: process.env.MONGO_URI,
+  mongoURI:
+    "mongodb://<law92>:<lawrence12>@ds011745.mlab.com:11745/mind-of-a-millennial-2",
   secretOrKey: "mernsecure"
 };
