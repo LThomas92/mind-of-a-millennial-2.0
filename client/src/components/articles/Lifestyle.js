@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AxiosAPI from "../AxiosAPI";
+import axios from "axios";
 
 class Lifestyle extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Lifestyle extends React.Component {
   }
 
   componentDidMount() {
-    AxiosAPI.get("/api/articles/lifestyle").then(res => {
+    axios.get("/api/articles/lifestyle").then(res => {
       this.setState({
         articles: res.data
       });

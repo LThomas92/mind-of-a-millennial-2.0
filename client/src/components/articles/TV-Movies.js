@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AxiosAPI from "../AxiosAPI";
+import axios from "axios";
 
 class TVMovies extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class TVMovies extends React.Component {
   }
 
   componentDidMount() {
-    AxiosAPI.get("/api/articles/tv-movies").then(res => {
+    axios.get("/api/articles/tv-movies").then(res => {
       this.setState({
         articles: res.data
       });
