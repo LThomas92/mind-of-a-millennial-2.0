@@ -17,7 +17,7 @@ require("./config/passport")(passport);
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
-const db = require("config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 //connect to the database
 mongoose
