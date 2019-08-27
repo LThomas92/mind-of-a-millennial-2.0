@@ -13,7 +13,7 @@ import AxiosAPI from "../components/AxiosAPI";
 // Add Article
 export const addArticle = articleData => dispatch => {
   dispatch(clearErrors());
-  AxiosAPI.post("/articles/add", articleData)
+  AxiosAPI.post("/api/articles/add", articleData)
     .then(res =>
       dispatch({
         type: ADD_ARTICLE,
@@ -30,7 +30,7 @@ export const addArticle = articleData => dispatch => {
 //GET ALL ARTICLES
 export const getAllArticles = () => dispatch => {
   dispatch(setArticleLoading());
-  AxiosAPI.get("/articles")
+  AxiosAPI.get("/api/articles")
     .then(res =>
       dispatch({
         type: GET_ARTICLES,
@@ -47,7 +47,7 @@ export const getAllArticles = () => dispatch => {
 //GET ONE ARTICLE
 export const getArticle = slug => dispatch => {
   dispatch(setArticleLoading());
-  AxiosAPI.get(`/articles/show/${slug}`)
+  AxiosAPI.get(`/api/articles/show/${slug}`)
     .then(res =>
       dispatch({
         type: GET_ARTICLE,
@@ -64,7 +64,7 @@ export const getArticle = slug => dispatch => {
 
 //DELETE ARTICLE
 export const deleteArticle = id => dispatch => {
-  AxiosAPI.delete(`/articles/${id}`)
+  AxiosAPI.delete(`/api/articles/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_ARTICLE,
