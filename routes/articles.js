@@ -109,7 +109,7 @@ router.get("/show/:slug", function(req, res, next) {
 });
 
 router.post(
-  "/",
+  "/add",
   middleware.isWriter,
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
