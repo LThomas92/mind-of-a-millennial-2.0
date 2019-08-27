@@ -12,10 +12,6 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const path = require("path");
 
-require("dotenv").config();
-const {
-  env: { MONGO_URL }
-} = process;
 
 // ROUTES
 const users = require("./routes/user");
@@ -23,7 +19,7 @@ const articles = require("./routes/articles");
 
 //connect to the database
 mongoose
-  .connect(`${MONGO_URL}`, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || "mongodb://ds011745.mlab.com:11745/mind-of-a-millennial-2", { useNewUrlParser: true })
   .then(() => console.log("Database connected successfully"))
   .catch(err => console.log(err));
 
