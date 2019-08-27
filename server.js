@@ -16,11 +16,9 @@ const path = require("path");
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
-const DB = require("./config/keys").mongoURI;
-
 //connect to the database
 mongoose
-  .connect(DB, { useNewUrlParser: true })
+  .connect(process.env.DB, { useNewUrlParser: true })
   .then(() => console.log("Database connected successfully"))
   .catch(err => console.log(err));
 
