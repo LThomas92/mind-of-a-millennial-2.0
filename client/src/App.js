@@ -3,6 +3,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import setAuthToken from "./utils/setAuthToken";
 import jwt_decode from "jwt-decode";
+require("dotenv/config");
 
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
