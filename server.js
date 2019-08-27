@@ -12,15 +12,18 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const path = require("path");
 
+require("dotenv").config();
+const {
+  env: { MONGO_URL }
+} = process;
+
 // ROUTES
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
-const url = require("./config/keys").mongoURI;
-
 //connect to the database
 mongoose
-  .connect(url, { useNewUrlParser: true })
+  .connect(`${MONGO_URL}`, { useNewUrlParser: true })
   .then(() => console.log("Database connected successfully"))
   .catch(err => console.log(err));
 
