@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const PORT = process.env.PORT || 4000;
 const passport = require("passport");
 const flash = require("connect-flash");
 const LocalStrategy = require("passport-local");
