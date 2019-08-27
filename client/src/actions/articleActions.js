@@ -14,7 +14,7 @@ import axios from "axios";
 export const addArticle = articleData => dispatch => {
   dispatch(clearErrors());
   axios
-    .post("/api/articles/add", articleData)
+    .post("/articles/add", articleData)
     .then(res =>
       dispatch({
         type: ADD_ARTICLE,
@@ -32,7 +32,7 @@ export const addArticle = articleData => dispatch => {
 export const getAllArticles = () => dispatch => {
   dispatch(setArticleLoading());
   axios
-    .get("/api/articles")
+    .get("/articles")
     .then(res =>
       dispatch({
         type: GET_ARTICLES,
@@ -50,7 +50,7 @@ export const getAllArticles = () => dispatch => {
 export const getArticle = slug => dispatch => {
   dispatch(setArticleLoading());
   axios
-    .get(`/api/articles/show/${slug}`)
+    .get(`/articles/show/${slug}`)
     .then(res =>
       dispatch({
         type: GET_ARTICLE,
@@ -68,7 +68,7 @@ export const getArticle = slug => dispatch => {
 //DELETE ARTICLE
 export const deleteArticle = id => dispatch => {
   axios
-    .delete(`/api/articles/${id}`)
+    .delete(`/articles/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_ARTICLE,

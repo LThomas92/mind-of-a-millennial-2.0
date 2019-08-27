@@ -12,14 +12,17 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const path = require("path");
 
-
 // ROUTES
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
 //connect to the database
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://ds011745.mlab.com:11745/mind-of-a-millennial-2", { useNewUrlParser: true })
+  .connect(
+    process.env.MONGODB_URI ||
+      "mongodb://ds011745.mlab.com:11745/mind-of-a-millennial-2",
+    { useNewUrlParser: true }
+  )
   .then(() => console.log("Database connected successfully"))
   .catch(err => console.log(err));
 
@@ -67,7 +70,7 @@ app.use(function(req, res, next) {
 
 //USE ROUTES
 app.use("/", users);
-app.use("/api/articles", articles);
+app.use("/articles", articles);
 
 //SERVE STATIC ASSETS IN PRODUCTION
 if (process.env.NODE_ENV === "production") {
