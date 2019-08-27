@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const port = process.env.PORT || 4000;
 const passport = require("passport");
 const flash = require("connect-flash");
 const LocalStrategy = require("passport-local");
@@ -76,8 +77,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
-const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
