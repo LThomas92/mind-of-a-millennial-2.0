@@ -138,7 +138,7 @@ router.post(
           res.json(err.message);
           return res.redirect("back");
         }
-        res.redirect("/articles/" + article.id);
+        res.redirect("/");
       });
     });
   }

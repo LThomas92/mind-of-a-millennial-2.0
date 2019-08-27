@@ -62,7 +62,6 @@ class App extends React.Component {
             <Route path="/api/articles/show/:id" exact component={Show} />
             <Switch>
               <PrivateRoute
-                user={this.props.auth}
                 path="/api/articles/add"
                 exact
                 component={ArticleForm}
