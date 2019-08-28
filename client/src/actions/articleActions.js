@@ -8,7 +8,7 @@ import {
   CLEAR_ERRORS
 } from "./types";
 
-import AxiosAPI from "../../components/AxiosAPI";
+import AxiosAPI from "../components/AxiosAPI";
 
 // Add Article
 export const addArticle = articleData => dispatch => {

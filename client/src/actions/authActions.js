@@ -1,4 +1,4 @@
-import AxiosAPI from "../../components/AxiosAPI";
+import AxiosAPI from "../components/AxiosAPI";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
