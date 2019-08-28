@@ -101,15 +101,8 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:slug", function(req, res, next) {
-  Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
-    if (err) return next(err);
-    res.json(article);
-  });
-});
-
 router.post(
-  "/add",
+  "/",
   middleware.isWriter,
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
@@ -143,6 +136,13 @@ router.post(
     });
   }
 );
+
+router.get("/:slug", function(req, res, next) {
+  Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
+    if (err) return next(err);
+    res.json(article);
+  });
+});
 
 /* DELETE ARTICLE */
 router.delete(
