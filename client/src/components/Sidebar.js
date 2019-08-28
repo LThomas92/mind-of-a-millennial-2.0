@@ -5,31 +5,31 @@ import { slide as Menu } from "react-burger-menu";
 export default props => {
   return (
     <Menu>
-      <Link className="menu-item" to="/">
-        Home
+      <Link className="menu-item" to="/api/articles">
+        Articles
       </Link>
 
       <Link className="menu-item" to="/about-us">
         About
       </Link>
 
-      <Link className="menu-item" to="/tv-movies">
+      <Link className="menu-item" to="/api/articles/tv-movies">
         TV/Movies
       </Link>
 
-      <Link className="menu-item" to="/sports">
+      <Link className="menu-item" to="/api/articles/sports">
         Sports
       </Link>
 
-      <Link className="menu-item" to="/music">
+      <Link className="menu-item" to="/api/articles/music">
         Music
       </Link>
 
-      <Link className="menu-item" to="/lifestyle">
+      <Link className="menu-item" to="/api/articles/lifestyle">
         Lifestyle
       </Link>
 
-      <Link className="menu-item" to="/misc">
+      <Link className="menu-item" to="/api/articles/misc">
         Misc.
       </Link>
 
