@@ -11,6 +11,9 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const path = require("path");
 
+const users = require("./routes/user");
+const articles = require("./routes/articles");
+
 //connect to the database
 mongoose
   .connect(
@@ -62,6 +65,10 @@ app.use(function(req, res, next) {
   res.locals.success = req.flash("success");
   next();
 });
+
+// Use Routes
+app.use("/api/users", users);
+app.use("/api/articles", articles);
 
 //SERVE STATIC ASSETS IN PRODUCTION
 if (process.env.NODE_ENV === "production") {

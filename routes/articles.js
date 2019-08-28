@@ -29,7 +29,7 @@ cloudinary.config({
 
 const validatePostInput = require("../validation/articles");
 
-router.get("/articles", (req, res) => {
+router.get("/", (req, res) => {
   Article.find({})
     .sort({ date: "-1" })
     .exec(function(err, articles) {
@@ -109,7 +109,7 @@ router.get("/:slug", function(req, res, next) {
 });
 
 router.post(
-  "/add",
+  "/",
   middleware.isWriter,
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
