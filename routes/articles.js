@@ -146,7 +146,7 @@ router.post(
 
 /* DELETE ARTICLE */
 router.delete(
-  "/api/articles/:id",
+  "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Article.findById(req.params.id)
