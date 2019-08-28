@@ -6,7 +6,7 @@ class TVMovies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      articles: ["1 article"]
     };
   }
 
