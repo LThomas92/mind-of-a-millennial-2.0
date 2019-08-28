@@ -1,16 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { getArticles } from "../../../src/actions/articleActions";
+import axios from "axios";
 
 class AllArticles extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      articles: []
+    };
+  }
+
   componentDidMount() {
-    this.props.getArticles();
+    axios.get("/api/articles").then(res => {
+      this.setState({
+        articles: res.data
+      });
+    });
   }
 
   render() {
     document.title = "Mind of A Millennial | Home";
-    const { articles } = this.props;
 
     return (
       <div className="container">
@@ -18,7 +27,7 @@ class AllArticles extends React.Component {
           <section className="leading" />
         </div>
         <main className="grid">
-          {articles.slice(-16).map(article => {
+          {this.state.articles.slice(-16).map(article => {
             return (
               <div key={article._id}>
                 <h3 className="u-center-text">{article.title}</h3>
@@ -41,16 +50,4 @@ class AllArticles extends React.Component {
   }
 }
 
-AllArticles.propTypes = {
-  getArticles: PropTypes.func.isRequired,
-  article: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  post: state.post
-});
-
-export default connect(
-  mapStateToProps,
-  { getArticles }
-)(AllArticles);
+export default AllArticles;
