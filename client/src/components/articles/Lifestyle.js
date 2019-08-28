@@ -11,7 +11,7 @@ class Lifestyle extends React.Component {
   }
 
   componentDidMount() {
-    AxiosAPI.get("/lifestyle").then(res => {
+    AxiosAPI.get("/api/articles/lifestyle").then(res => {
       this.setState({
         articles: res.data
       });
