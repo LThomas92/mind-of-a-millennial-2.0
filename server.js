@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
 
 // Use Routes
 app.use("/", users);
-app.use("/api/articles", articles);
+app.use("/articles", articles);
 
 //SERVE STATIC ASSETS IN PRODUCTION
 if (process.env.NODE_ENV === "production") {

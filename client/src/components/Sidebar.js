@@ -13,23 +13,23 @@ export default props => {
         About
       </Link>
 
-      <Link className="menu-item" to="/api/articles/tv-movies">
+      <Link className="menu-item" to="/articles/tv-movies">
         TV/Movies
       </Link>
 
-      <Link className="menu-item" to="/api/articles/sports">
+      <Link className="menu-item" to="/articles/sports">
         Sports
       </Link>
 
-      <Link className="menu-item" to="/api/articles/music">
+      <Link className="menu-item" to="/articles/music">
         Music
       </Link>
 
-      <Link className="menu-item" to="/api/articles/lifestyle">
+      <Link className="menu-item" to="/articles/lifestyle">
         Lifestyle
       </Link>
 
-      <Link className="menu-item" to="/api/articles/misc">
+      <Link className="menu-item" to="/articles/misc">
         Misc.
       </Link>
 
