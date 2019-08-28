@@ -101,6 +101,18 @@ router.get("/misc", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+  Article.find({})
+    .sort({ date: "-1" })
+    .exec(function(err, articles) {
+      if (err) {
+        res.json(err.message);
+      } else {
+        res.json(articles);
+      }
+    });
+});
+
 router.post(
   "/add",
   middleware.isWriter,

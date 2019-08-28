@@ -14,7 +14,7 @@ import axios from "axios";
 export const addArticle = articleData => dispatch => {
   dispatch(clearErrors());
   axios
-    .post("/api/articles", articleData)
+    .post("/api/articles/add", articleData)
     .then(res =>
       dispatch({
         type: ADD_ARTICLE,

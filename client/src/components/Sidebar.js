@@ -5,8 +5,8 @@ import { slide as Menu } from "react-burger-menu";
 export default props => {
   return (
     <Menu>
-      <Link className="menu-item" to="/api/articles">
-        Articles
+      <Link className="menu-item" to="/">
+        Home
       </Link>
 
       <Link className="menu-item" to="/about-us">
