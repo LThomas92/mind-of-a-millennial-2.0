@@ -11,7 +11,7 @@ class TVMovies extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/tv-movies").then(res => {
+    axios.get("tv-movies").then(res => {
       this.setState({
         articles: res.data
       });
