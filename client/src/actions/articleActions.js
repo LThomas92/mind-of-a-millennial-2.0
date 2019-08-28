@@ -32,7 +32,7 @@ export const addArticle = articleData => dispatch => {
 export const getAllArticles = () => dispatch => {
   dispatch(setArticleLoading());
   axios
-    .get("/api/articles")
+    .get("/api/articles/")
     .then(res =>
       dispatch({
         type: GET_ARTICLES,
