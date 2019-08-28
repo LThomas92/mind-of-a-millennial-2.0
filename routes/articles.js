@@ -29,18 +29,6 @@ cloudinary.config({
 
 const validatePostInput = require("../validation/articles");
 
-router.get("/", (req, res) => {
-  Article.find({})
-    .sort({ date: "-1" })
-    .exec(function(err, articles) {
-      if (err) {
-        res.json(err.message);
-      } else {
-        res.json(articles);
-      }
-    });
-});
-
 router.get("/sports", (req, res) => {
   Article.find({ category: "Sports" })
     .sort({ date: "-1" })
@@ -91,6 +79,18 @@ router.get("/lifestyle", (req, res) => {
 
 router.get("/misc", (req, res) => {
   Article.find({ category: "Misc" })
+    .sort({ date: "-1" })
+    .exec(function(err, articles) {
+      if (err) {
+        res.json(err.message);
+      } else {
+        res.json(articles);
+      }
+    });
+});
+
+router.get("/", (req, res) => {
+  Article.find({})
     .sort({ date: "-1" })
     .exec(function(err, articles) {
       if (err) {
