@@ -17,7 +17,7 @@ class Header extends React.Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const addArticleButton = (
-      <Link to="/api/articles/add" className="btn btn--white">
+      <Link to="/add" className="btn btn--white">
         Add New Article
       </Link>
     );

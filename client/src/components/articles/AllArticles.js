@@ -11,7 +11,7 @@ class AllArticles extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/api/articles/").then(res => {
+    axios.get("/articles").then(res => {
       this.setState({
         articles: res.data
       });

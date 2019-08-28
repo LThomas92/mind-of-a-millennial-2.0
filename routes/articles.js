@@ -29,7 +29,7 @@ cloudinary.config({
 
 const validatePostInput = require("../validation/articles");
 
-router.get("/", (req, res) => {
+router.get("/articles", (req, res) => {
   Article.find({})
     .sort({ date: "-1" })
     .exec(function(err, articles) {
@@ -101,7 +101,7 @@ router.get("/misc", (req, res) => {
     });
 });
 
-router.get("/show/:slug", function(req, res, next) {
+router.get("/:slug", function(req, res, next) {
   Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
     if (err) return next(err);
     res.json(article);
