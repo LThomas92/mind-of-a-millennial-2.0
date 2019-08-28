@@ -30,7 +30,10 @@ class AllArticles extends React.Component {
             return (
               <div key={article._id}>
                 <h3 className="u-center-text">{article.title}</h3>
-                <Link className="article-link" to={`/show/${article.slug}`}>
+                <Link
+                  className="article-link"
+                  to={`/api/articles/${article.slug}`}
+                >
                   <img
                     className="article-img"
                     alt="Article Img"

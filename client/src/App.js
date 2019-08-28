@@ -52,16 +52,20 @@ class App extends React.Component {
           <div id="page-wrap">
             <SideBar />
             <Header />
-            <Route path="/articles" exact component={AllArticles} />
+            <Route path="/api/articles" exact component={AllArticles} />
             <Route path="/sports" exact component={SportsArticles} />
             <Route path="/tv-movies" exact component={TVMovies} />
             <Route path="/music" exact component={Music} />
             <Route path="/lifestyle" exact component={Lifestyle} />
             <Route path="/misc" exact component={Misc} />
             <Route path="/privacy-policy" exact component={PrivacyPolicy} />
-            <Route path="/:id" exact component={Show} />
+            <Route path="/api/articles/:id" exact component={Show} />
             <Switch>
-              <PrivateRoute path="/add" exact component={ArticleForm} />
+              <PrivateRoute
+                path="/api/articles/add"
+                exact
+                component={ArticleForm}
+              />
             </Switch>
             <Route path="/about-us" exact component={AboutUs} />
             <Route path="/register" exact component={Register} />
