@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
+import { TVBanner } from "../../MoM-TVMovies-Banner@2x.png";
+
 class TVMovies extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class TVMovies extends React.Component {
           <img
             alt="TV-Movies Header Created by @_law92"
             className="banner-image"
-            src={process.env.PUBLIC_URL + "MoM-TVMovies-Banner@2x.png"}
+            src={TVBanner}
           />
         </section>
         <main className="grid">
