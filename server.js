@@ -17,8 +17,7 @@ const articles = require("./routes/articles");
 //connect to the database
 mongoose
   .connect(
-    process.env.MONGODB_URI ||
-      "mongodb://ds011745.mlab.com:11745/mind-of-a-millennial-2",
+    process.env.MONGODB_URI ||,
     { useNewUrlParser: true }
   )
   .then(() => console.log("Database connected successfully"))
