@@ -20,7 +20,6 @@ class AllArticles extends React.Component {
 
   render() {
     document.title = "Mind of A Millennial | Home";
-
     return (
       <div className="container">
         <div>

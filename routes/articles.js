@@ -102,7 +102,7 @@ router.get("/misc", (req, res) => {
 });
 
 router.post(
-  "/",
+  "/add",
   middleware.isWriter,
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
