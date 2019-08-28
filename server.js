@@ -67,7 +67,7 @@ app.use(function(req, res, next) {
 });
 
 // Use Routes
-app.use("/api/users", users);
+app.use("/", users);
 app.use("/api/articles", articles);
 
 //SERVE STATIC ASSETS IN PRODUCTION

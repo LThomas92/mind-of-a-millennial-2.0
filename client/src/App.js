@@ -52,7 +52,7 @@ class App extends React.Component {
           <div id="page-wrap">
             <SideBar />
             <Header />
-            <Route path="/api/articles" exact component={AllArticles} />
+            <Route path="/" exact component={AllArticles} />
             <Route path="/sports" exact component={SportsArticles} />
             <Route path="/tv-movies" exact component={TVMovies} />
             <Route path="/music" exact component={Music} />
