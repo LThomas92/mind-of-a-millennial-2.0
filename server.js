@@ -8,15 +8,17 @@ const cors = require("cors");
 const passport = require("passport");
 const flash = require("connect-flash");
 const LocalStrategy = require("passport-local");
-const User = require("./models/User");
+const PORT = 5000;
 const path = require("path");
 
 const users = require("./routes/user");
 const articles = require("./routes/articles");
 
+const DB = require("./config/keys").mongoURI;
+
 //connect to the database
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect(DB, { useNewUrlParser: true })
   .then(() => console.log("Database connected successfully"))
   .catch(err => console.log(err));
 
