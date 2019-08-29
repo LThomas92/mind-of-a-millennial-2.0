@@ -16,7 +16,7 @@ class Show extends React.Component {
   }
 
   render() {
-    document.title = `Mind of A Millennial | ${document.title} `;
+    document.title = `Mind of A Millennial | ${article.title} `;
     const { user } = this.props.auth;
     const { article } = this.props.article;
 
