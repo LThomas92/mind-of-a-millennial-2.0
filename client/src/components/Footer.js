@@ -1,13 +1,16 @@
 import React from "react";
 import "../App.scss";
 import { Link } from "react-router-dom";
-import logo from "../header-logo.svg";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__logo-box">
-        <img src={logo} className="footer__logo" alt="Footer Logo" />
+        <img
+          src={"https://i.imgur.com/9z9yIye.png"}
+          className="footer__logo"
+          alt="Footer Logo"
+        />
       </div>
       <div className="row">
         <div className="col-1-of-2">

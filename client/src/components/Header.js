@@ -5,7 +5,6 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCurrentUser } from "../actions/authActions";
 import { logoutUser } from "../actions/authActions";
-import logo from "../header-logo.svg";
 
 class Header extends React.Component {
   onLogoutClick = e => {
@@ -26,7 +25,11 @@ class Header extends React.Component {
       <div className="header">
         <div className="header__logo-box">
           <Link to="/">
-            <img src={logo} className="header__logo" alt="Logo" />
+            <img
+              src={"https://i.imgur.com/9z9yIye.png"}
+              className="header__logo"
+              alt="Logo"
+            />
           </Link>
         </div>
         {isAuthenticated ? (

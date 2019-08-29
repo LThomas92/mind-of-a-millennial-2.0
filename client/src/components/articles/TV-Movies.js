@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
-import { TVBanner } from "../../MoM-TVMovies-Banner@2x.png";
-
 class TVMovies extends React.Component {
   constructor(props) {
     super(props);
