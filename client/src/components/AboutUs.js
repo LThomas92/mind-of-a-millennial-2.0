@@ -192,7 +192,7 @@ const AboutUs = () => {
                   <li>St. John's University</li>
                   <li>26 Years Old</li>
                   <li>Amalgam of Legal Analysis & Hip-Hop Lyrics</li>
-                  <li>Is Ungaurdable</li>
+                  <li>Is Unguardable</li>
                 </ul>
               </div>
             </div>
@@ -228,7 +228,7 @@ const AboutUs = () => {
                 <div className="card__price-box">
                   <p className="card__price-value">
                     <a
-                      href="https://www.instagram.com/_tbent92"
+                      href="https://www.instagram.com/tbent_92"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
