@@ -24,7 +24,7 @@ class Misc extends React.Component {
       <div className="container">
         <section>
           <img
-            src={process.env.PUBLIC_URL + "MoM-Misc-Banner@2x.png"}
+            src={"https://i.imgur.com/SumUaDg.png"}
             alt="Misc. Banner Created by @_law92"
             className="banner-image"
           />
@@ -36,7 +36,7 @@ class Misc extends React.Component {
                 <h3 className="u-center-text">{article.title}</h3>
                 <Link
                   className="article-link"
-                  to={`/api/articles/show/${article._id}`}
+                  to={`/api/articles/show/${article.slug}`}
                 >
                   <img className="article-img" alt="" src={article.image} />
                 </Link>

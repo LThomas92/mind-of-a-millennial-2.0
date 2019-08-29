@@ -26,7 +26,7 @@ class Music extends React.Component {
           <img
             alt="Music Header Created by @_law92"
             className="banner-image"
-            src={process.env.PUBLIC_URL + "MoM-Music-Banner@2x.png"}
+            src={"https://i.imgur.com/NgabDvW.png"}
           />
         </section>
         <main className="grid">
@@ -36,7 +36,7 @@ class Music extends React.Component {
                 <h3 className="u-center-text">{article.title}</h3>
                 <Link
                   className="article-link"
-                  to={`/api/articles/show/${article._id}`}
+                  to={`/api/articles/show/${article.slug}`}
                 >
                   <img className="article-img" alt="" src={article.image} />
                 </Link>

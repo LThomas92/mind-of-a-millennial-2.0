@@ -26,7 +26,7 @@ class SportsArticles extends React.Component {
           <img
             alt="Sports Header Created By @_law92"
             className="banner-image"
-            src={process.env.PUBLIC_URL + "MoM-Sports-Banner@2x.png"}
+            src={"https://i.imgur.com/StRlyp6.png"}
           />
         </section>
         <main className="grid">
@@ -36,7 +36,7 @@ class SportsArticles extends React.Component {
                 <h3 className="u-center-text">{article.title}</h3>
                 <Link
                   className="article-link"
-                  to={`/api/articles/show/${article._id}`}
+                  to={`/api/articles/show/${article.slug}`}
                 >
                   <img className="article-img" alt="Main" src={article.image} />
                 </Link>

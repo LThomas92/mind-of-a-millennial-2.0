@@ -26,7 +26,7 @@ class Lifestyle extends React.Component {
           <img
             className="banner-image"
             alt="Lifestyle Banner Created By @law92"
-            src={process.env.PUBLIC_URL + "MoM-Lifestyle-Banner@2x.png"}
+            src={"https://i.imgur.com/6Y7sJ4g.png"}
           />
         </section>
         <main className="grid">
@@ -36,7 +36,7 @@ class Lifestyle extends React.Component {
                 <h3 className="u-center-text">{article.title}</h3>
                 <Link
                   className="article-link"
-                  to={`/api/articles/show/${article._id}`}
+                  to={`/api/articles/show/${article.slug}`}
                 >
                   <img
                     className="article-img"
