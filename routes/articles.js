@@ -101,9 +101,26 @@ router.get("/misc", (req, res) => {
     });
 });
 
+router.get("/show/:slug", (req, res) => {
+  Article.findOne({ slug: { $eq: req.params.slug } })
+    .then(article => {
+      if (article) {
+        res.json(article);
+      } else {
+        res
+          .status(404)
+          .json({ noarticlefound: "No article found with that title" });
+      }
+    })
+    .catch(err =>
+      res
+        .status(404)
+        .json({ noarticlefound: "No article found with that title" })
+    );
+});
+
 router.post(
-  "/add",
-  middleware.isWriter,
+  "/",
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
   (req, res) => {
