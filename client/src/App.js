@@ -65,11 +65,7 @@ class App extends React.Component {
             <Route path="/privacy-policy" exact component={PrivacyPolicy} />
             <Route path="/api/articles/:id" exact component={Show} />
             <Switch>
-              <PrivateRoute
-                path="/api/articles/add"
-                exact
-                component={ArticleForm}
-              />
+              <PrivateRoute path="/add" exact component={ArticleForm} />
             </Switch>
             <Route path="/about-us" exact component={AboutUs} />
             <Route path="/register" exact component={Register} />

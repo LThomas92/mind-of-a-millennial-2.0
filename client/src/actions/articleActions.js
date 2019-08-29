@@ -13,7 +13,7 @@ import AxiosAPI from "../components/AxiosAPI";
 // Add Article
 export const addArticle = articleData => dispatch => {
   dispatch(clearErrors());
-  AxiosAPI.post("/api/articles", articleData)
+  AxiosAPI.post("/add", articleData)
     .then(res =>
       dispatch({
         type: ADD_ARTICLE,

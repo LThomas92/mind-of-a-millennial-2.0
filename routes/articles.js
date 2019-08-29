@@ -120,7 +120,7 @@ router.get("/show/:slug", (req, res) => {
 });
 
 router.post(
-  "/",
+  "/add",
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
   (req, res) => {
