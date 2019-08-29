@@ -47,7 +47,7 @@ export const getAllArticles = () => dispatch => {
 //GET ONE ARTICLE
 export const getArticle = slug => dispatch => {
   dispatch(setArticleLoading());
-  AxiosAPI.get(`/api/articles/${slug}`)
+  AxiosAPI.get(`/api/articles/show/${slug}`)
     .then(res =>
       dispatch({
         type: GET_ARTICLE,
