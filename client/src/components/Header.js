@@ -5,7 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCurrentUser } from "../actions/authActions";
 import { logoutUser } from "../actions/authActions";
-import logo from "../logo.svg";
+import logo from "../header-logo.svg";
 
 class Header extends React.Component {
   onLogoutClick = e => {

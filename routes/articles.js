@@ -101,22 +101,11 @@ router.get("/misc", (req, res) => {
     });
 });
 
-router.get("/show/:slug", (req, res) => {
-  Article.findOne({ slug: { $eq: req.params.slug } })
-    .then(article => {
-      if (article) {
-        res.json(article);
-      } else {
-        res
-          .status(404)
-          .json({ noarticlefound: "No article found with that title" });
-      }
-    })
-    .catch(err =>
-      res
-        .status(404)
-        .json({ noarticlefound: "No article found with that title" })
-    );
+router.get("/show/:slug", function(req, res, next) {
+  Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
+    if (err) return next(err);
+    res.json(article);
+  });
 });
 
 router.post(

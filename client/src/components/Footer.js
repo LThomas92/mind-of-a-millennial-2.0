@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.scss";
 import { Link } from "react-router-dom";
-import logo from "../logo.svg";
+import logo from "../header-logo.svg";
 
 const Footer = () => {
   return (
