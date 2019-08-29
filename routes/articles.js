@@ -146,7 +146,7 @@ router.post(
       Article.create(req.body, function(err, article) {
         if (err) {
           res.json(err.message);
-          return res.redirect("back");
+          return res.redirect("/");
         }
         res.redirect("/");
       });
