@@ -145,8 +145,8 @@ const AboutUs = () => {
                   <li> Writer</li>
                   <li>St. John's University</li>
                   <li>27 Years Old</li>
-                  <li>Women, Weed & Whiskey</li>
-                  <li>Saves Lives By Day, Tells Dad Jokes By Night</li>
+                  <li>Hopeless Hip-Hop Romantic</li>
+                  <li>Cannabis Connoisseur</li>
                 </ul>
               </div>
             </div>
@@ -270,9 +270,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="card__side card__side--back card__side--back-7">
-              <div className="card__cta">
-                
-              </div>
+              <div className="card__cta"></div>
             </div>
           </div>
         </div>
