@@ -1,5 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
+import AxiosAPI from "../../components/AxiosAPI";
 import "react-quill/dist/quill.snow.css";
 
 class EditForm extends React.Component {
@@ -19,7 +20,7 @@ class EditForm extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("/api/articles/" + this.props.match.params.slug).then(res => {
+    AxiosAPI.get("/api/articles/" + this.props.match.params.slug).then(res => {
       this.setState({ article: res.data });
       console.log(this.state.article);
     });
@@ -54,19 +55,15 @@ class EditForm extends React.Component {
     e.preventDefault();
 
     const { title, imgSource, image, category, text } = this.state.article;
-    axios
-      .put("/api/articles/" + this.props.match.params.slug, {
-        title,
-        imgSource,
-        image,
-        category,
-        text
-      })
-      .then(result => {
-        this.props.history.push(
-          "/api/articles/ " + this.props.match.params.slug
-        );
-      });
+    AxiosAPI.put("/api/articles/" + this.props.match.params.slug, {
+      title,
+      imgSource,
+      image,
+      category,
+      text
+    }).then(result => {
+      this.props.history.push("/api/articles/ " + this.props.match.params.slug);
+    });
   }
 
   render() {
