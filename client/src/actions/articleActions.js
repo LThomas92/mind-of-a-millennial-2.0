@@ -2,6 +2,7 @@ import {
   ADD_ARTICLE,
   GET_ARTICLE,
   GET_ARTICLES,
+  UPDATE_ARTICLE,
   DELETE_ARTICLE,
   ARTICLE_LOADING,
   GET_ERRORS,
@@ -68,13 +69,13 @@ export const editArticle = slug => dispatch => {
   AxiosAPI.put(`/api/articles/${slug}`)
     .then(res =>
       dispatch({
-        type: EDIT_ARTICLE,
+        type: UPDATE_ARTICLE,
         payload: res.data
       })
     )
     .catch(err =>
       dispatch({
-        type: EDIT_ARTICLE,
+        type: UPDATE_ARTICLE,
         payload: null
       })
     );
