@@ -66,6 +66,10 @@ class Show extends React.Component {
         )}
       </div>
     );
+    <div className="container">
+      <CommentForm />
+      <CommentFeed />
+    </div>;
   }
 }
 

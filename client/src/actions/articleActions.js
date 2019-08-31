@@ -79,6 +79,41 @@ export const deleteArticle = id => dispatch => {
     );
 };
 
+// Add Comment
+export const addComment = (articleId, commentData) => dispatch => {
+  dispatch(clearErrors());
+  AxiosAPI.post(`/api/articles/comment/${articleId}`, commentData)
+    .then(res =>
+      dispatch({
+        type: GET_ARTICLE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Delete Comment
+export const deleteComment = (articleId, commentId) => dispatch => {
+  AxiosAPI.delete(`/api/articles/comment/${articleId}/${commentId}`)
+    .then(res =>
+      dispatch({
+        type: GET_ARTICLE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Set loading state
 export const setArticleLoading = () => {
   return {
