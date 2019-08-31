@@ -7,7 +7,7 @@ import "react-quill/dist/quill.snow.css";
 
 class EditForm extends React.Component {
   componentDidMount() {
-    this.props.getArticle(this.props.match.parmas.id);
+    this.props.getArticle(this.props.match.parmas.slug);
   }
   constructor(props) {
     super(props);
