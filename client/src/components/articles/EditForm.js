@@ -6,9 +6,6 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 class EditForm extends React.Component {
-  componentDidMount() {
-    this.props.getArticle(this.props.match.parmas.slug);
-  }
   constructor(props) {
     super(props);
     this.state = {
