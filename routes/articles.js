@@ -137,35 +137,10 @@ router.post(
 );
 
 /* EDIT ARTICLE */
-
-router.put("/:slug", upload.single("image"), function(req, res) {
-  Article.findOne({ slug: { $eq: req.params.slug } }, async function(
-    err,
-    article
-  ) {
-    if (err) {
-      req.flash("error", err.message);
-      res.redirect("back");
-    } else {
-      if (req.file) {
-        try {
-          await cloudinary.v2.uploader.destroy(article.imageId);
-          var result = await cloudinary.v2.uploader.upload(req.file.path);
-          article.imageId = result.public_id;
-          article.image = result.secure_url;
-        } catch (err) {
-          req.flash("error", err.message);
-          return res.redirect("back");
-        }
-      }
-      article.title = req.body.title;
-      article.imgSource = req.body.imgSource;
-      article.category = req.body.category;
-      article.text = req.body.text;
-      article.save();
-      req.flash("success", "Successfully Updated!");
-      res.redirect("/api/articles/" + article.slug);
-    }
+router.put("/:slug", function(req, res, next) {
+  Article.findOne(req.params.slug, req.body, function(err, article) {
+    if (err) return next(err);
+    res.json(article);
   });
 });
 

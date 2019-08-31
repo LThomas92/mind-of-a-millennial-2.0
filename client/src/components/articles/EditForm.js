@@ -1,7 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { editArticle, getArticle } from "../../actions/articleActions";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -9,11 +6,7 @@ class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      imgSource: "",
-      image: "",
-      text: "",
-      category: "",
+      article: {},
       errors: {}
     };
 
@@ -23,6 +16,13 @@ class EditForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get("/api/articles/" + this.props.match.params.slug).then(res => {
+      this.setState({ article: res.data });
+      console.log(this.state.article);
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -53,26 +53,25 @@ class EditForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    let formData = new FormData();
-    formData.append("title", this.state.title);
-    formData.append("image", this.state.image);
-    formData.append("imgSource", this.state.imgSource);
-    formData.append("text", this.state.text);
-    formData.append("category", this.state.category);
-
-    this.props.editArticle(formData);
-    this.setState({
-      title: "",
-      imgSource: "",
-      image: "",
-      text: "",
-      category: ""
-    });
+    const { title, imgSource, image, category, text } = this.state.article;
+    axios
+      .put("/api/articles/" + this.props.match.params.slug, {
+        title,
+        imgSource,
+        image,
+        category,
+        text
+      })
+      .then(result => {
+        this.props.history.push(
+          "/api/articles/ " + this.props.match.params.slug
+        );
+      });
   }
 
   render() {
     document.title = "Mind of A Millennial | Edit Article";
-    const { article } = this.props.article;
+
     const { errors } = this.state;
     return (
       <div className="form-container">
@@ -91,7 +90,6 @@ class EditForm extends React.Component {
                 <input
                   type="text"
                   placeholder="Enter Article Title"
-                  defaultValue={article.title}
                   value={this.state.title}
                   onChange={this.onChangeTitle}
                   error={errors.title}
@@ -111,7 +109,6 @@ class EditForm extends React.Component {
                   type="text"
                   placeholder="Enter Image Source"
                   value={this.state.imgSource}
-                  defaultValue={article.imgSource}
                   onChange={this.onChangeImgSource}
                   error={errors.image}
                   className="form__input"
@@ -128,7 +125,6 @@ class EditForm extends React.Component {
                   placeholder="Enter Article Category"
                   className="form__input"
                   onChange={this.onChangeCategory}
-                  defaultValue={article.category}
                   value={this.state.category}
                   error={errors.category}
                 />
@@ -139,7 +135,6 @@ class EditForm extends React.Component {
               <ReactQuill
                 value={this.state.text}
                 error={errors.text}
-                defaultValue={article.text}
                 onChange={this.handleChange}
                 modules={EditForm.modules}
                 formats={EditForm.formats}
@@ -195,20 +190,4 @@ EditForm.formats = [
   "video"
 ];
 
-EditForm.propTypes = {
-  getArticle: PropTypes.func.isRequired,
-  editArticle: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth,
-  article: state.article,
-  errors: state.errors
-});
-
-export default connect(
-  mapStateToProps,
-  { editArticle, getArticle }
-)(EditForm);
+export default EditForm;
