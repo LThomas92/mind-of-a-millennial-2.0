@@ -47,7 +47,7 @@ export const getAllArticles = () => dispatch => {
 //GET ONE ARTICLE
 export const getArticle = slug => dispatch => {
   dispatch(setArticleLoading());
-  AxiosAPI.get(`/api/articles/show/${slug}`)
+  AxiosAPI.get(`/api/articles/${slug}`)
     .then(res =>
       dispatch({
         type: GET_ARTICLE,
@@ -57,6 +57,24 @@ export const getArticle = slug => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_ARTICLE,
+        payload: null
+      })
+    );
+};
+
+//EDIT ARTICLE
+export const editArticle = slug => dispatch => {
+  dispatch(setArticleLoading());
+  AxiosAPI.put(`/api/articles/${slug}`)
+    .then(res =>
+      dispatch({
+        type: EDIT_ARTICLE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: EDIT_ARTICLE,
         payload: null
       })
     );
