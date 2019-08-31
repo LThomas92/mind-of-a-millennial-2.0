@@ -136,14 +136,6 @@ router.post(
   }
 );
 
-/* EDIT ARTICLE */
-router.put("/:slug", function(req, res, next) {
-  Article.findOne(req.params.slug, req.body, function(err, article) {
-    if (err) return next(err);
-    res.json(article);
-  });
-});
-
 /* SHOW ARTICLE */
 router.get("/:slug", function(req, res, next) {
   Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {

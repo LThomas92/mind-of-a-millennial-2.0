@@ -1,7 +1,6 @@
 import {
   ADD_ARTICLE,
   DELETE_ARTICLE,
-  UPDATE_ARTICLE,
   GET_ARTICLE,
   GET_ARTICLES,
   ARTICLE_LOADING
@@ -26,8 +25,6 @@ export default function(state = intialState, action) {
       return { ...state, articles: action.payload, loading: false };
     case GET_ARTICLE:
       return { ...state, article: action.payload, loading: false };
-    case UPDATE_ARTICLE:
-      return { ...state, article: action.payload };
     case DELETE_ARTICLE:
       return {
         ...state,

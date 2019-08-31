@@ -12,7 +12,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import SideBar from "../src/components/Sidebar";
 import PrivacyPolicy from "../src/components/PrivayPolicy";
 import ArticleForm from "./components/articles/ArticleForm";
-import EditForm from "./components/articles/EditForm";
 import AllArticles from "./components/articles/AllArticles";
 import SportsArticles from "./components/articles/Sports";
 import TVMovies from "./components/articles/TV-Movies";
