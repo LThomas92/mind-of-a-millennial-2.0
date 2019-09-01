@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { setCurrentUser } from "../../actions/authActions";
 import { getArticle, deleteArticle } from "../../actions/articleActions";
-import { CommentFeed } from "../articles/comments/CommentFeed";
-import { CommentForm } from "../articles/comments/CommentForm";
+import { CommentFeed } from "./comments/CommentFeed";
+import { CommentForm } from "./comments/CommentForm";
 import moment from "moment";
 
 class Show extends React.Component {
