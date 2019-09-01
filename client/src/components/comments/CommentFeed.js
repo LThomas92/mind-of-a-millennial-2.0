@@ -5,7 +5,8 @@ import CommentItem from "./CommentItem";
 class CommentFeed extends Component {
   render() {
     const { comments, articleId } = this.props;
-    if (!comments || loading) {
+    if (!comments) {
+      ("Loading...");
       return comments.map(comment => (
         <CommentItem
           key={comment._id}
