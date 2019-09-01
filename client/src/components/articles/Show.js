@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { setCurrentUser } from "../../actions/authActions";
+import { setCurrentUser } from "../actions/authActions";
 import { getArticle, deleteArticle } from "../../actions/articleActions";
 import { CommentFeed } from "../comments/CommentFeed";
 import { CommentForm } from "../comments/CommentForm";
