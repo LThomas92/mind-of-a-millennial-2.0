@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addComment } from "../actions/articleActions";
+import { addComment } from "../../actions/articleActions";
 
 class CommentForm extends React.Component {
   constructor(props) {
