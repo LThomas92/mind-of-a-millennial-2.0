@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { deleteComment } from "../../actions/articleActions";
+import { deleteComment } from "../actions/articleActions";
 
 class CommentItem extends Component {
   onDeleteClick(articleId, commentId) {
