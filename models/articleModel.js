@@ -16,24 +16,7 @@ const ArticleSchema = new Schema({
   imgSource: String,
   category: String,
   text: String,
-  submittedAt: { type: Date, default: Date.now },
-  comments: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-      },
-      text: {
-        type: String,
-        required: true
-      },
-      username: String,
-      date: {
-        type: Date,
-        default: Date.now
-      }
-    }
-  ]
+  submittedAt: { type: Date, default: Date.now }
 });
 
 // make sure that the slug is created from the title

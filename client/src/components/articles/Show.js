@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { setCurrentUser } from "../../actions/authActions";
 import { getArticle, deleteArticle } from "../../actions/articleActions";
-import CommentFeed from "../comments/CommentFeed";
-import CommentForm from "../comments/CommentForm";
 import moment from "moment";
 
 class Show extends React.Component {
@@ -66,8 +64,6 @@ class Show extends React.Component {
         ) : (
           <div />
         )}
-        <CommentForm articleId={article._id} />
-        <CommentFeed articleId={article._id} comments={article.comments} />
       </div>
     );
   }
