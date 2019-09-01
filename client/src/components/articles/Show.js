@@ -66,12 +66,10 @@ class Show extends React.Component {
         ) : (
           <div />
         )}
+        <CommentForm articleId={article._id} />
+        <CommentFeed articleId={article._id} comments={article.comments} />
       </div>
     );
-    <div className="container">
-      <CommentForm />
-      <CommentFeed />
-    </div>;
   }
 }
 
