@@ -95,7 +95,7 @@ class EditForm extends React.Component {
                 <input
                   type="text"
                   placeholder="Enter Article Title"
-                  value={article.title}
+                  value={this.state.article.title}
                   onChange={this.onChangeTitle}
                   error={errors.title}
                   className="form__input"
@@ -113,7 +113,7 @@ class EditForm extends React.Component {
                 <input
                   type="text"
                   placeholder="Enter Image Source"
-                  value={article.imgSource}
+                  value={this.state.article.imgSource}
                   onChange={this.onChangeImgSource}
                   error={errors.image}
                   className="form__input"
@@ -130,7 +130,7 @@ class EditForm extends React.Component {
                   placeholder="Enter Article Category"
                   className="form__input"
                   onChange={this.onChangeCategory}
-                  value={article.category}
+                  value={this.state.article.category}
                   error={errors.category}
                 />
               </div>
@@ -138,7 +138,7 @@ class EditForm extends React.Component {
             <div className="form__group">
               <label className="form__label">Content</label>
               <ReactQuill
-                value={article.text}
+                value={this.state.article.text}
                 error={errors.text}
                 onChange={this.handleChange}
                 modules={EditForm.modules}
