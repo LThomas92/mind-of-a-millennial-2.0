@@ -1,9 +1,8 @@
 import React from "react";
 import ReactQuill from "react-quill";
-import AxiosAPI from "../../components/AxiosAPI";
 import "react-quill/dist/quill.snow.css";
 import { connect } from "react-redux";
-import { getArticle, editArticle } from "../../actions/articleActions";
+import { getArticle, updateArticle } from "../../actions/articleActions";
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -64,7 +63,7 @@ class EditForm extends React.Component {
     formData.append("text", this.state.text);
     formData.append("category", this.state.category);
 
-    this.props.editArticle(formData);
+    this.props.updateArticle(formData);
     this.setState({
       title: "",
       imgSource: "",
