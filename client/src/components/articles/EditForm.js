@@ -75,9 +75,8 @@ class EditForm extends React.Component {
 
   render() {
     document.title = "Mind of A Millennial | Edit Article";
-
     const { errors } = this.state;
-    const { article } = this.props.article;
+
     return (
       <div className="form-container">
         <div className="login">
