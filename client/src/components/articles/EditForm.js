@@ -201,5 +201,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getArticle, editArticle }
+  { getArticle, updateArticle }
 )(EditForm);
