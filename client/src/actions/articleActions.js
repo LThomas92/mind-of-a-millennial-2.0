@@ -2,7 +2,6 @@ import {
   ADD_ARTICLE,
   GET_ARTICLE,
   GET_ARTICLES,
-  UPDATE_ARTICLE,
   DELETE_ARTICLE,
   ARTICLE_LOADING,
   GET_ERRORS,
@@ -10,7 +9,6 @@ import {
 } from "./types";
 
 import AxiosAPI from "../components/AxiosAPI";
-import { setServers } from "dns";
 
 // Add Article
 export const addArticle = articleData => dispatch => {
@@ -64,25 +62,6 @@ export const getArticle = slug => dispatch => {
     );
 };
 
-//EDIT ARTICLE
-export const updateArticle = (slug, articleData, history) => dispatch => {
-  dispatch(setArticleLoading());
-  AxiosAPI.patch(`/api/articles/${slug}`, articleData).then(res => {
-    dispatch({
-      type: UPDATE_ARTICLE,
-      payload: res.data
-    });
-    dispatch(setArticleLoading());
-    history.push(`/`);
-  }).catch(err => {
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data
-    })
-    dispatch(setArticleLoading());
-  });
-};
-
 //DELETE ARTICLE
 export const deleteArticle = id => dispatch => {
   AxiosAPI.delete(`/api/articles/${id}`)
@@ -90,41 +69,6 @@ export const deleteArticle = id => dispatch => {
       dispatch({
         type: DELETE_ARTICLE,
         payload: id
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
-// Add Comment
-export const addComment = (articleId, commentData) => dispatch => {
-  dispatch(clearErrors());
-  AxiosAPI.post(`/api/articles/comment/${articleId}`, commentData)
-    .then(res =>
-      dispatch({
-        type: GET_ARTICLE,
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
-// Delete Comment
-export const deleteComment = (articleId, commentId) => dispatch => {
-  AxiosAPI.delete(`/api/articles/comment/${articleId}/${commentId}`)
-    .then(res =>
-      dispatch({
-        type: GET_ARTICLE,
-        payload: res.data
       })
     )
     .catch(err =>

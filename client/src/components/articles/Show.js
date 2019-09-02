@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCurrentUser } from "../../actions/authActions";
 import { getArticle, deleteArticle } from "../../actions/articleActions";
@@ -54,9 +53,6 @@ class Show extends React.Component {
 
         {user.isWriter === true && currentArticleAuthor === user.username ? (
           <React.Fragment>
-            <Link className="button2 button2--edit" to="/edit">
-              Edit Article
-            </Link>
             <button
               onClick={this.onDeleteClick.bind(this, article._id)}
               type="button"
