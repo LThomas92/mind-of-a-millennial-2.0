@@ -3,7 +3,8 @@ import {
   DELETE_ARTICLE,
   GET_ARTICLE,
   GET_ARTICLES,
-  ARTICLE_LOADING
+  ARTICLE_LOADING,
+  UPDATE_ARTICLE
 } from "../actions/types";
 
 const intialState = {
@@ -25,6 +26,15 @@ export default function(state = intialState, action) {
       return { ...state, articles: action.payload, loading: false };
     case GET_ARTICLE:
       return { ...state, article: action.payload, loading: false };
+    case UPDATE_ARTICLE:
+      const articles = state.articles.filter(
+        article => article.slug !== action.payload.slug
+      );
+      return {
+        ...state,
+        article: {},
+        articles: [...articles, action.payload]
+      };
     case DELETE_ARTICLE:
       return {
         ...state,

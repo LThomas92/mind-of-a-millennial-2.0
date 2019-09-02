@@ -12,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SideBar from "../src/components/Sidebar";
 import PrivacyPolicy from "../src/components/PrivayPolicy";
 import ArticleForm from "./components/articles/ArticleForm";
+import EditForm from "./components/articles/EditForm";
 import AllArticles from "./components/articles/AllArticles";
 import SportsArticles from "./components/articles/Sports";
 import TVMovies from "./components/articles/TV-Movies";
@@ -65,6 +66,7 @@ class App extends React.Component {
             <Route path="/privacy-policy" exact component={PrivacyPolicy} />
             <Route path="/api/articles/:id" exact component={Show} />
             <Switch>
+              <PrivateRoute path="/edit" exact component={EditForm} />
               <PrivateRoute path="/add" exact component={ArticleForm} />
             </Switch>
             <Route path="/about-us" exact component={AboutUs} />

@@ -2,12 +2,18 @@ import React from "react";
 import ReactQuill from "react-quill";
 import AxiosAPI from "../../components/AxiosAPI";
 import "react-quill/dist/quill.snow.css";
+import { connect } from "react-redux";
+import { getArticle, editArticle } from "../../actions/articleActions";
 
 class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: {},
+      title: "",
+      imgSource: "",
+      image: "",
+      text: "",
+      category: "",
       errors: {}
     };
 
@@ -20,10 +26,7 @@ class EditForm extends React.Component {
   }
 
   componentDidMount() {
-    AxiosAPI.get("/api/articles/" + this.props.match.params.slug).then(res => {
-      this.setState({ article: res.data });
-      console.log(this.state.article);
-    });
+    this.props.getArticle(this.props.match.params.slug);
   }
 
   componentWillReceiveProps(newProps) {
@@ -54,15 +57,20 @@ class EditForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const { title, imgSource, image, category, text } = this.state.article;
-    AxiosAPI.put("/api/articles/" + this.props.match.params.slug, {
-      title,
-      imgSource,
-      image,
-      category,
-      text
-    }).then(result => {
-      this.props.history.push("/api/articles/ " + this.props.match.params.slug);
+    let formData = new FormData();
+    formData.append("title", this.state.title);
+    formData.append("image", this.state.image);
+    formData.append("imgSource", this.state.imgSource);
+    formData.append("text", this.state.text);
+    formData.append("category", this.state.category);
+
+    this.props.editArticle(formData);
+    this.setState({
+      title: "",
+      imgSource: "",
+      image: "",
+      text: "",
+      category: ""
     });
   }
 
@@ -187,4 +195,12 @@ EditForm.formats = [
   "video"
 ];
 
-export default EditForm;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { getArticle, editArticle }
+)(EditForm);

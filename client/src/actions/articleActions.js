@@ -2,6 +2,7 @@ import {
   ADD_ARTICLE,
   GET_ARTICLE,
   GET_ARTICLES,
+  UPDATE_ARTICLE,
   DELETE_ARTICLE,
   ARTICLE_LOADING,
   GET_ERRORS,
@@ -9,6 +10,7 @@ import {
 } from "./types";
 
 import AxiosAPI from "../components/AxiosAPI";
+import { setServers } from "dns";
 
 // Add Article
 export const addArticle = articleData => dispatch => {
@@ -60,6 +62,25 @@ export const getArticle = slug => dispatch => {
         payload: null
       })
     );
+};
+
+//EDIT ARTICLE
+export const updateArticle = (slug, articleData, history) => dispatch => {
+  dispatch(setArticleLoading());
+  AxiosAPI.patch(`/api/articles/${slug}`, articleData).then(res => {
+    dispatch({
+      type: UPDATE_ARTICLE,
+      payload: res.data
+    });
+    dispatch(setArticleLoading());
+    history.push(`/`);
+  }).catch(err => {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    })
+    dispatch(setArticleLoading());
+  });
 };
 
 //DELETE ARTICLE

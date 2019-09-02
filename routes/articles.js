@@ -144,6 +144,22 @@ router.get("/:slug", function(req, res, next) {
   });
 });
 
+/* EDIT ARTICLE */
+router.patch("/:slug", passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validatePostInput(req.body);
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+    const { title, image, imgSource, category, text } = req.body;
+    Article.findOneAndUpdate(
+      { $set: { title, imgSource, image, text, category } },
+      {new: true}
+    ).then(article => res.status(200).json(article))
+      .catch(err => res.status(400).json({update: "Error Updating Article" }))
+  }
+)
+
 /* DELETE ARTICLE */
 router.delete(
   "/:id",
