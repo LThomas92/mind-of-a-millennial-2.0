@@ -8,11 +8,7 @@ class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      imgSource: "",
-      image: "",
-      text: "",
-      category: "",
+      article: {},
       errors: {}
     };
 
@@ -76,7 +72,7 @@ class EditForm extends React.Component {
   render() {
     document.title = "Mind of A Millennial | Edit Article";
     const { errors } = this.state;
-
+    const { article } = this.props;
     return (
       <div className="form-container">
         <div className="login">
@@ -94,7 +90,9 @@ class EditForm extends React.Component {
                 <input
                   type="text"
                   placeholder="Enter Article Title"
-                  value={this.state.article.title}
+                  value={
+                    typeof article.title === "undefined" ? "" : article.title
+                  }
                   onChange={this.onChangeTitle}
                   error={errors.title}
                   className="form__input"
@@ -112,7 +110,11 @@ class EditForm extends React.Component {
                 <input
                   type="text"
                   placeholder="Enter Image Source"
-                  value={this.state.article.imgSource}
+                  value={
+                    typeof article.imgSource === "undefined"
+                      ? ""
+                      : article.imgSource
+                  }
                   onChange={this.onChangeImgSource}
                   error={errors.image}
                   className="form__input"
@@ -129,7 +131,11 @@ class EditForm extends React.Component {
                   placeholder="Enter Article Category"
                   className="form__input"
                   onChange={this.onChangeCategory}
-                  value={this.state.article.category}
+                  value={
+                    typeof article.category === "undefined"
+                      ? ""
+                      : article.category
+                  }
                   error={errors.category}
                 />
               </div>
@@ -137,7 +143,7 @@ class EditForm extends React.Component {
             <div className="form__group">
               <label className="form__label">Content</label>
               <ReactQuill
-                value={this.state.article.text}
+                value={typeof article.text === "undefined" ? "" : article.text}
                 error={errors.text}
                 onChange={this.handleChange}
                 modules={EditForm.modules}
