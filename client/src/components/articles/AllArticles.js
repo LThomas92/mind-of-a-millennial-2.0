@@ -1,19 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import AxiosAPI from "../../components/AxiosAPI";
-import { getArticles } from "../../actions/articleActions";
+import { getAllArticles } from "../../actions/articleActions";
 
 class AllArticles extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: []
-    };
-  }
-
   componentDidMount() {
-    this.props.getArticles(this.props.match.params.id);
+    this.props.getAllArticles(this.props.match.params.id);
   }
 
   render() {
@@ -55,5 +47,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getArticles }
+  { getAllArticles }
 )(AllArticles);
