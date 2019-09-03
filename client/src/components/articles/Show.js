@@ -7,7 +7,7 @@ import moment from "moment";
 
 class Show extends React.Component {
   componentDidMount() {
-    this.props.getArticle(this.props.match.params.id);
+    this.props.getArticle(this.props.match.params.slug);
   }
 
   onDeleteClick(id) {
