@@ -30,7 +30,7 @@ class TVMovies extends React.Component {
           />
         </section>
         <main className="grid">
-          {this.state.articles.map(article => {
+          {this.state.articles.slice(-16).map(article => {
             return (
               <div key={article._id}>
                 <h3 className="u-center-text">{article.title}</h3>
