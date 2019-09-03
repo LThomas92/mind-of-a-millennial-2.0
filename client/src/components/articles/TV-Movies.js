@@ -38,7 +38,11 @@ class TVMovies extends React.Component {
                   className="article-link"
                   to={`/api/articles/${article.slug}`}
                 >
-                  <img className="article-img" alt="" src={article.image} />
+                  <img
+                    className="article-img"
+                    alt="Article Img"
+                    src={article.image}
+                  />
                 </Link>
               </div>
             );
