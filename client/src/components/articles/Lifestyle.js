@@ -36,7 +36,7 @@ class Lifestyle extends React.Component {
                 <h3 className="u-center-text">{article.title}</h3>
                 <Link
                   className="article-link"
-                  to={`/api/articles/${article.slug}`}
+                  to={`/api/articles/show/${article.slug}`}
                 >
                   <img
                     className="article-img"

@@ -137,7 +137,7 @@ router.post(
 );
 
 /* SHOW ARTICLE */
-router.get("/:slug", function(req, res, next) {
+router.get("/show/:slug", function(req, res, next) {
   Article.findOne({ slug: { $eq: req.params.slug } }, function(err, article) {
     if (err) return next(err);
     res.json(article);
