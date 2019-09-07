@@ -146,7 +146,7 @@ router.get("/show/:slug", function(req, res, next) {
 
 /*EDIT ARTICLE */
 router.put(
-  "/edit",
+  "/:slug",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     // Destructuring
