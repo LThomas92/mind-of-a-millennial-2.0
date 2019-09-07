@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { setCurrentUser } from "../../actions/authActions";
 import { getArticle, deleteArticle } from "../../actions/articleActions";
 import moment from "moment";
