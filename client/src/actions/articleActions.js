@@ -62,6 +62,18 @@ export const getArticle = slug => dispatch => {
     );
 };
 
+// EDIT ARTICLE
+export const editProduct = (articleData, slug, history) => dispatch => {
+  AxiosAPI.put(`api/articles/${slug}`, articleData)
+    .then(res => history.push("/"))
+    .catch(err =>
+      dispatch({
+        type: "GET_ERRORS",
+        payload: err.response.data
+      })
+    );
+};
+
 //DELETE ARTICLE
 export const deleteArticle = id => dispatch => {
   AxiosAPI.delete(`/api/articles/${id}`)

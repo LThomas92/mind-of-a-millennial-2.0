@@ -144,6 +144,44 @@ router.get("/show/:slug", function(req, res, next) {
   });
 });
 
+/*EDIT ARTICLE */
+router.put(
+  "/edit",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // Destructuring
+    const { errors, isValid } = validateArticleInput(req.body);
+    const { title, catergory, imgSource, image, text } = req.body;
+
+    // Check validation
+    if (!isValid) {
+      // if any errors, send 400 with errors object
+      return res.status(400).json(errors);
+    }
+
+    // Get fields
+    const articleFields = {};
+
+    if (title) articleFields.title = title;
+    if (imgSource) articleFields.imgSource = imgSource;
+    if (catergory) articleFields.catergory = catergory;
+    if (image) articleFields.image = image;
+    if (text) articleFields.text = text;
+
+    //Find product and update or create
+    Article.findOne(req.params.slug).then(article => {
+      // if product exist, udpdate
+      if (article) {
+        Article.findOneAndUpdate(
+          { slug: { $eq: req.params.slug } },
+          { $set: articleFields },
+          { new: true }
+        ).then(article => res.json(article));
+      }
+    });
+  }
+);
+
 /* DELETE ARTICLE */
 router.delete(
   "/:id",
