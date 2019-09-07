@@ -8,14 +8,23 @@ import "react-quill/dist/quill.snow.css";
 import isEmpty from "../../validation/is-empty";
 
 class EditForm extends React.Component {
-  state = {
-    title: "",
-    imgSource: "",
-    image: "",
-    text: "",
-    category: "",
-    errors: {}
-  };
+  constructor(props) {
+    super(props);
+    state = {
+      title: "",
+      imgSource: "",
+      image: "",
+      text: "",
+      category: "",
+      errors: {}
+    };
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeImgSource = this.onChangeImgSource.bind(this);
+    this.onChangeImage = this.onChangeImage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
   componentDidMount() {
     this.props.getArticle();
@@ -65,6 +74,14 @@ class EditForm extends React.Component {
     this.props.editArticle(editArticle, slug, this.props.history);
   };
 
+  onChangeTitle = e => {
+    this.setState({ title: e.target.value });
+  };
+
+  onChangeImgSource = e => {
+    this.setState({ imgSource: e.target.value });
+  };
+
   onChangeImage = e => {
     this.setState({ image: e.target.files[0] });
   };
@@ -72,9 +89,8 @@ class EditForm extends React.Component {
   handleChange = value => {
     this.setState({ text: value });
   };
-
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  onChangeCategory = e => {
+    this.setState({ category: e.target.value });
   };
 
   render() {
