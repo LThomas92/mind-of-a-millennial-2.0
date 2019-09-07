@@ -10,7 +10,7 @@ import isEmpty from "../../validation/is-empty";
 class EditForm extends React.Component {
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       title: "",
       imgSource: "",
       image: "",
