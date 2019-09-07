@@ -114,7 +114,7 @@ class EditForm extends React.Component {
                   type="text"
                   placeholder="Enter Article Title"
                   value={this.state.title}
-                  onChange={this.onChange}
+                  onChange={this.onChangeTitle}
                   error={errors.title}
                   className="form__input"
                 />
@@ -132,7 +132,7 @@ class EditForm extends React.Component {
                   type="text"
                   placeholder="Enter Image Source"
                   value={this.state.imgSource}
-                  onChange={this.onChange}
+                  onChange={this.onChangeImgSource}
                   error={errors.image}
                   className="form__input"
                 />
@@ -147,7 +147,7 @@ class EditForm extends React.Component {
                   type="text"
                   placeholder="Enter Article Category"
                   className="form__input"
-                  onChange={this.onChange}
+                  onChange={this.onChangeCategory}
                   value={this.state.category}
                   error={errors.category}
                 />
