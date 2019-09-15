@@ -64,7 +64,7 @@ export const getArticle = slug => dispatch => {
 
 // EDIT ARTICLE
 export const editArticle = (articleData, slug, history) => dispatch => {
-  AxiosAPI.put(`/api/articles/${slug}`, articleData)
+  AxiosAPI.put(`/api/articles/edit/${slug}`, articleData)
     .then(res => history.push("/"))
     .catch(err =>
       dispatch({

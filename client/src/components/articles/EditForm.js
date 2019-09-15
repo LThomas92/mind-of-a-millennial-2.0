@@ -69,9 +69,9 @@ class EditForm extends React.Component {
       text: this.state.title
     };
 
-    const slug = this.props.match.params.slug;
+    const id = this.props.match.params.id;
 
-    this.props.editArticle(editArticle, slug, this.props.history);
+    this.props.editArticle(editArticle, id, this.props.history);
   };
 
   onChangeTitle = e => {
