@@ -8,7 +8,7 @@ const cors = require("cors");
 const passport = require("passport");
 const flash = require("connect-flash");
 const LocalStrategy = require("passport-local");
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 const path = require("path");
 const http = require("http");
 
@@ -79,6 +79,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(process.env.PORT || 5000);
+server.listen(port, () => {
+  console.log("App is running on port " + port);
+});
 
 module.exports = app;
