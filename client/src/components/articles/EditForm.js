@@ -214,10 +214,10 @@ EditForm.formats = [
 ];
 
 EditForm.propTypes = {
-  editProduct: PropTypes.func.isRequired,
-  getCurrentProduct: PropTypes.func.isRequired,
+  editArticle: PropTypes.func.isRequired,
+  getArticle: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  product: PropTypes.object.isRequired,
+  article: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 

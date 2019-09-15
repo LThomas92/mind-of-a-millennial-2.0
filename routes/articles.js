@@ -145,38 +145,38 @@ router.get("/show/:slug", function(req, res, next) {
 });
 
 /*EDIT ARTICLE */
-router.put(
-  "/:slug",
+rrouter.put(
+  "/edit/:slug",
   passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    // Destructuring
-    const { errors, isValid } = validateArticleInput(req.body);
-    const { title, catergory, imgSource, image, text } = req.body;
-
-    // Check validation
-    if (!isValid) {
-      // if any errors, send 400 with errors object
-      return res.status(400).json(errors);
-    }
-
-    // Get fields
-    const articleFields = {};
-
-    if (title) articleFields.title = title;
-    if (imgSource) articleFields.imgSource = imgSource;
-    if (catergory) articleFields.catergory = catergory;
-    if (image) articleFields.image = image;
-    if (text) articleFields.text = text;
-
-    //Find product and update or create
-    Article.findOne(req.params.slug).then(article => {
-      // if product exist, udpdate
-      if (article) {
-        Article.findOneAndUpdate(
-          { slug: { $eq: req.params.slug } },
-          { $set: articleFields },
-          { new: true }
-        ).then(article => res.json(article));
+  upload.single("image"),
+  function(req, res) {
+    Article.findOne({ slug: { $eq: req.params.slug } }, async function(
+      err,
+      article
+    ) {
+      if (err) {
+        // Check validation
+        if (!isValid) {
+          // if any errors, send 400 with errors object
+          return res.status(400).json(errors);
+        }
+      } else {
+        if (req.file) {
+          try {
+            await cloudinary.v2.uploader.destroy(article.imageId);
+            var result = await cloudinary.v2.uploader.upload(req.file.path);
+            article.imageId = result.public_id;
+            article.image = result.secure_url;
+          } catch (err) {
+            return res.redirect("back");
+          }
+        }
+        article.title = req.body.title;
+        article.imgSource = req.body.imgSource;
+        article.text = req.body.text;
+        article.category = req.body.category;
+        article.save();
+        res.json(article);
       }
     });
   }
