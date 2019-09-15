@@ -79,7 +79,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log("App is running on port " + port);
 });
 
