@@ -68,7 +68,7 @@ export const editArticle = (articleData, slug, history) => dispatch => {
     .then(res => history.push("/"))
     .catch(err =>
       dispatch({
-        type: "GET_ERRORS",
+        type: GET_ERRORS,
         payload: err.response.data
       })
     );
