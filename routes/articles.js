@@ -145,7 +145,7 @@ router.get("/show/:slug", function(req, res, next) {
 });
 
 /*EDIT ARTICLE */
-rrouter.put(
+router.put(
   "/edit/:slug",
   passport.authenticate("jwt", { session: false }),
   upload.single("image"),
