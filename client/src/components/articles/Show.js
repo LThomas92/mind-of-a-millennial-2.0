@@ -56,7 +56,7 @@ class Show extends React.Component {
           <React.Fragment>
             <Link
               className="button2 button2--edit"
-              to={`/api/articles/edit${slug}`}
+              to={`/api/articles/edit/${article.slug}`}
             >
               Edit Article
             </Link>
