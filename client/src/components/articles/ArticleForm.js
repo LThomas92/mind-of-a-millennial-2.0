@@ -88,7 +88,7 @@ class ArticleForm extends React.Component {
           >
             <label className="form__label">Article Title</label>
             <div className="form__group">
-              <div className="inputWithIcon">
+            <div className="inputWithIcon">
                 <i className="fa fa-pencil icon" aria-hidden="true" />
                 <input
                   type="text"
@@ -99,7 +99,7 @@ class ArticleForm extends React.Component {
                   className="form__input"
                 />
               </div>
-            </div>
+              </div>
             <div className="form__group">
               <label className="form__label">Upload Image</label>
               <input type="file" onChange={this.onChangeImage} />
@@ -107,7 +107,7 @@ class ArticleForm extends React.Component {
             <div className="form__group">
               <label className="form__label">Image Source</label>
               <div className="inputWithIcon">
-                <i className="fa fa-pencil icon" />
+                <i className="fa fa-pencil icon" aria-hidden="true" />
                 <input
                   type="text"
                   placeholder="Enter Image Source"
@@ -117,12 +117,13 @@ class ArticleForm extends React.Component {
                   className="form__input"
                 />
               </div>
-            </div>
+              </div>
+  
             <label className="form__label">Article Category</label>
 
             <div className="form__group">
-              <div className="inputWithIcon">
-                <i className="fa fa-pencil icon" />
+            <div className="inputWithIcon">
+                <i className="fa fa-pencil icon" aria-hidden="true" />
                 <input
                   type="text"
                   placeholder="Enter Article Category"
@@ -132,7 +133,7 @@ class ArticleForm extends React.Component {
                   error={errors.category}
                 />
               </div>
-            </div>
+              </div>
             <div className="form__group">
               <label className="form__label">Content</label>
               <ReactQuill

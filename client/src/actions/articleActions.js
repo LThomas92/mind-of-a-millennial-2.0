@@ -9,6 +9,7 @@ import {
 } from "./types";
 
 import AxiosAPI from "../components/AxiosAPI";
+import history from "../history";
 
 // Add Article
 export const addArticle = articleData => dispatch => {
@@ -26,6 +27,7 @@ export const addArticle = articleData => dispatch => {
         payload: err.response.data
       })
     );
+  history.push("/");
 };
 //GET ALL ARTICLES
 export const getAllArticles = () => dispatch => {
@@ -62,18 +64,6 @@ export const getArticle = slug => dispatch => {
     );
 };
 
-// EDIT ARTICLE
-export const editArticle = (articleData, slug, history) => dispatch => {
-  AxiosAPI.put(`/api/articles/edit/${slug}`, articleData)
-    .then(res => history.push("/"))
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
-
 //DELETE ARTICLE
 export const deleteArticle = id => dispatch => {
   AxiosAPI.delete(`/api/articles/${id}`)
@@ -89,6 +79,7 @@ export const deleteArticle = id => dispatch => {
         payload: err.response.data
       })
     );
+  history.push("/");
 };
 
 // Set loading state
