@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .env
+mindofmillennial.com.csr
+mindofmillennial.com.key
 
 # testing
 /coverage

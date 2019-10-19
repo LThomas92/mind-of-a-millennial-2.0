@@ -54,12 +54,6 @@ class Show extends React.Component {
 
         {user.isWriter === true && currentArticleAuthor === user.username ? (
           <React.Fragment>
-            <Link
-              className="button2 button2--edit"
-              to={`/api/articles/edit/${article.slug}`}
-            >
-              Edit Article
-            </Link>
             <button
               onClick={this.onDeleteClick.bind(this, article._id)}
               type="button"
