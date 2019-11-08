@@ -1,4 +1,5 @@
 import React from "react";
+import lifestyle from "../../img/lifestyle.png";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
@@ -26,7 +27,7 @@ class Lifestyle extends React.Component {
           <img
             className="banner-image"
             alt="Lifestyle Banner Created By @law92"
-            src={"https://i.imgur.com/6Y7sJ4g.png"}
+            src={lifestyle}
           />
         </section>
         <main className="grid">

@@ -1,4 +1,5 @@
 import React from "react";
+import music from "../../img/music.png";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
@@ -26,7 +27,7 @@ class Music extends React.Component {
           <img
             alt="Music Header Created by @_law92"
             className="banner-image"
-            src={"https://i.imgur.com/NgabDvW.png"}
+            src={music}
           />
         </section>
         <main className="grid">

@@ -1,4 +1,5 @@
 import React from "react";
+import { sports } from "../../img/sports.png";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
@@ -26,7 +27,7 @@ class SportsArticles extends React.Component {
           <img
             alt="Sports Header Created By @_law92"
             className="banner-image"
-            src={"https://i.imgur.com/StRlyp6.png"}
+            src={sports}
           />
         </section>
         <main className="grid">

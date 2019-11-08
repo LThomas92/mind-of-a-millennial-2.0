@@ -1,4 +1,5 @@
 import React from "react";
+import misc from "../../img/misc.png";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
@@ -24,7 +25,7 @@ class Misc extends React.Component {
       <div className="container">
         <section>
           <img
-            src={"https://i.imgur.com/SumUaDg.png"}
+            src={misc}
             alt="Misc. Banner Created by @_law92"
             className="banner-image"
           />

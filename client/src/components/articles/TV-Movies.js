@@ -1,4 +1,5 @@
 import React from "react";
+import tvmovies from "../../img/tvmovies.png";
 import { Link } from "react-router-dom";
 import AxiosAPI from "../../components/AxiosAPI";
 
@@ -26,7 +27,7 @@ class TVMovies extends React.Component {
           <img
             alt="TV-Movies Header Created by @_law92"
             className="banner-image"
-            src={"https://i.imgur.com/EID1mzu.png"}
+            src={tvmovies}
           />
         </section>
         <main className="grid">
