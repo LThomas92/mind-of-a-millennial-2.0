@@ -20,7 +20,7 @@ class Misc extends React.Component {
   }
 
   render() {
-    document.title = "Mind of A Millennial | Misc.";
+    document.title = "Misc. | Mind of A Millennial ";
     return (
       <div className="container">
         <section>

@@ -20,7 +20,7 @@ class Lifestyle extends React.Component {
   }
 
   render() {
-    document.title = "Mind of A Millennial | Lifestyle";
+    document.title = "Lifestyle | Mind of A Millennial";
     return (
       <div className="container">
         <section>

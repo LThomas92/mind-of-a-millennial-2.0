@@ -1,11 +1,11 @@
 import React from "react";
 
 const AboutUs = () => {
-  document.title = "Mind of a Millennial | About Us";
+  document.title = "About Us | Mind of a Millennial ";
   return (
     <section className="section-tours" id="section-tours">
       <div className="u-center-text u-margin-bottom-big">
-        <h1 className="heading-secondary">ABOUT US</h1>
+        <h2 className="heading-secondary">ABOUT US</h2>
       </div>
 
       <div className="row">

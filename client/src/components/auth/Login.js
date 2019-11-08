@@ -59,7 +59,7 @@ class Login extends React.Component {
 
   render() {
     const { errors } = this.state;
-    document.title = "Mind of A Millennial | Login To Your Account";
+    document.title = " Login To Your Account | Mind of A Millennial";
 
     return (
       <section className="section-form">

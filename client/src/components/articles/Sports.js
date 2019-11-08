@@ -20,7 +20,7 @@ class SportsArticles extends React.Component {
   }
 
   render() {
-    document.title = "Mind of A Millennial | Sports";
+    document.title = "Sports | Mind of A Millennial";
     return (
       <div className="container">
         <section>

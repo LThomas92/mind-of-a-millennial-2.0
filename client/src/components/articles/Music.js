@@ -20,7 +20,7 @@ class Music extends React.Component {
   }
 
   render() {
-    document.title = "Mind of A Millennial | Music";
+    document.title = "Music | Mind of A Millennial ";
     return (
       <div className="container">
         <section>

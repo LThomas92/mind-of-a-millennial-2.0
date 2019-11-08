@@ -84,7 +84,7 @@ class Register extends React.Component {
 
   render() {
     const { errors } = this.state;
-    document.title = "Mind of A Millennial | Register A New Account";
+    document.title = "Register A New Account | Mind of A Millennial ";
 
     return (
       <section className="section-form">

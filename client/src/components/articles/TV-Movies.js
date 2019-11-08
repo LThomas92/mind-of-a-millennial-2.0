@@ -20,7 +20,7 @@ class TVMovies extends React.Component {
   }
 
   render() {
-    document.title = "Mind of A Millennial | TV-Movies";
+    document.title = "TV-Movies | Mind of A Millennial ";
     return (
       <div className="container">
         <section>
