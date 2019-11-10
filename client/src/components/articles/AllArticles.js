@@ -23,7 +23,7 @@ class AllArticles extends React.Component {
     return (
       <div className="container">
         <div>
-          <section className="leading" />
+        
         </div>
         <main className="grid">
           {this.state.articles.slice(-16).map(article => {
